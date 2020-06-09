@@ -6,7 +6,7 @@ import './NavMenu.css';
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
 
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
@@ -15,18 +15,25 @@ export class NavMenu extends Component {
     };
   }
 
-  toggleNavbar () {
+  toggleNavbar() {
     this.setState({
       collapsed: !this.state.collapsed
     });
   }
 
-  render () {
+  render() {
     return (
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+        <div className="container">
+         zzzz
+        </div>
+        <Navbar sticky="top" className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
           <Container>
-            <NavbarBrand tag={Link} to="/">demoReactJs</NavbarBrand>
+            <NavbarBrand tag={Link} to="/">NSTH</NavbarBrand>
+            <form className="form-inline mt-2 pl-2 mt-md-0 d-flex">
+              <input className="form-control mr-sm-2" type="text" placeholder="Search"></input>
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
               <ul className="navbar-nav flex-grow">
